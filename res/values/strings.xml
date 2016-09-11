@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string name="app_name">shogiandroid</string>
+  <string name="input_is_empty">Your input is empty</string>
+  <string name="your_input_fmt">Your input: %1$s</string>
+  <string name="touch_me">Touch me</string>
+  <string name="server_client_id">251334305389-bgquej9f33fouvub2mnm764tmd0q4h0u.apps.googleusercontent.com</string>
+  <string name="title_login">Login With Google Account</string>
+  <string name="title_gamescreen">Game Board</string>
+
+</resources>

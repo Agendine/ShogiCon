@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="agendine.draft.shogiandroid"
+          android:versionCode="{{version-code}}"
+          android:versionName="{{version-name}}" >
+
+          <uses-sdk android:minSdkVersion="15"
+              android:targetSdkVersion="23" />
+
+  <application
+      android:name="neko.App"
+      android:icon="@drawable/icontrans2"
+      android:label="ShogiConnect">
+    <activity android:name=".SplashActivity"
+              android:theme="@android:style/Theme.Translucent.NoTitleBar">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".MainActivity">
+      <intent-filter>
+        <action android:name='agendine.draft.shogiandroid.MAIN'/>
+        <category android:name='android.intent.category.DEFAULT'/>
+      </intent-filter>
+    </activity>
+    <activity
+        android:name=".GameActivity"
+        android:label="@string/title_gamescreen"
+        android:parentActivityName="agendine.draft.shogiandroid.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="agendine.draft.shogiandroid.GameActivity" />
+        <intent-filter>
+            <action android:name='agendine.draft.shogiandroid.GAME'/>
+        <category android:name='android.intent.category.DEFAULT'/>
+        </intent-filter>
+    </activity>
+    <activity
+        android:name=".LoginActivity"
+        android:label="@string/title_login"
+        android:parentActivityName="agendine.draft.shogiandroid.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="agendine.draft.shogiandroid.LoginActivity" />
+        <intent-filter>
+            <action android:name='agendine.draft.shogiandroid.LOGIN'/>
+            <category android:name='android.intent.category.DEFAULT'/>
+        </intent-filter>
+    </activity>
+
+    <receiver
+        android:name="com.google.android.gms.gcm.GcmReceiver"
+        android:exported="true"
+        android:permission="com.google.android.c2dm.permission.SEND" >
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            <category android:name="com.example.gcm" />
+        </intent-filter>
+    </receiver>
+    <service
+        android:name="agendine.draft.shogiandroid.MyInstanceIdListenerService"
+        android:exported="false">
+        <intent-filter>
+            <action android:name="com.google.android.gms.iid.InstanceID" />
+        </intent-filter>
+    </service>
+    <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+            <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+
+      <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+        <intent-filter>
+          <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+        </intent-filter>
+      </receiver>
+
+      <provider
+        android:authorities="com.google.android.gms.measurement.google_measurement_service"
+        android:exported="false"
+        android:name="com.google.android.gms.measurement.AppMeasurementContentProvider" />
+
+  </application>
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCOUNT_MANAGER" />
+  <uses-permission android:name="android.permission.C2D_MESSAGE"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+
+  {{#debug-build}}
+  <!-- Inside this section the permission will work only in debug builds (this is -->
+  <!-- needed for remote REPL). If your application logic requires Internet -->
+  <!-- permission too, move it out of the section. -->
+  {{/debug-build}}
+</manifest>
