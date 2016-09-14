@@ -13,7 +13,8 @@ verification, feature implementation/extensibility, error-checking, and for the 
 be easily understandable.  This is achieved by following a thoroughly-planned and minimalistic
 architecture, and thorough documentation.
 
-Though the program is being initially created for Android due to my own familiarity,      it is designed to be as easy to implement on other devices as possible,
+Though the program is being initially created for Android due to my own familiarity,      
+it is designed to be as easy to implement on other devices as possible,
 largely by relying only on services to which every phone OS has a parallel, and by
 using the server to handle as much as possible. Lein Droid is being used for
 the actual Android app.
@@ -54,7 +55,8 @@ The phone side of things contains:
       matchmaking (simple ranked or unranked player pools.  A player can simply request to
                    be listed as available for a match, or browse the list of available
                    Players to challenge)
-      notifications to the other player (via Push notificaitons through Google/Apple services),      user verification (via Google/Apple account authentication, since those should be
+      notifications to the other player (via Push notificaitons through Google/Apple services),      
+      user verification (via Google/Apple account authentication, since those should be
                          available for any user)
       Game history of each running game (used to verify that no illegal
                     tampering gets sent as a move, to prevent cheating).
