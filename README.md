@@ -4,6 +4,7 @@ All-clojure asynchronous, internet-enabled mobile Shogi.
 
 ;; *****************************************************************************************
 ;; *****************************************************************************************
+
 ;; This is the draft file for the logic of a Shogi game, intended as a phone app allowing
 ;; asynchronous play over the internet, using push notification.  Early draft does not
 ;; include single-player-versus-ai, so all moves are input by a player.  The goal is
@@ -12,17 +13,21 @@ All-clojure asynchronous, internet-enabled mobile Shogi.
 ;; be easily understandable.  This is achieved by following a thoroughly-planned and minimalistic
 ;; architecture, and thorough documentation.
 ;;
+
 ;; Though the program is being initially created for Android due to my own familiarity,
 ;;      it is designed to be as easy to implement on other devices as possible,
 ;;      largely by relying only on services to which every phone OS has a parallel, and by
 ;;      using the server to handle as much as possible. Lein Droid is being used for
 ;;      the actual Android app.
+
 ;; *****************************************************************************************
 ;; *****************************************************************************************
+
 ;;
 ;; **************************************************
 ;; The phone side of things contains:
 ;; **************************************************
+
 ;;      The game logic,
 ;;      UI and options,
 ;;      SQLite database of current games (encoded as plain strings for easy parse and transmission)
@@ -30,9 +35,11 @@ All-clojure asynchronous, internet-enabled mobile Shogi.
 ;;      **possibly later:**
 ;;           AI to play against
 ;;
+
 ;; **************************************************
 ;; The server side handles:
 ;; **************************************************
+
 ;;      User accounts (VERY simple.  NO PRIVATE INFORMATION IS STORED.  Just:
 ;;                     a username,
 ;;                     a unique id from the OAUTH service (eg Google)
@@ -51,9 +58,11 @@ All-clojure asynchronous, internet-enabled mobile Shogi.
 ;;      Game history of each running game (used to verify that no illegal
 ;;                    JSON-tampering gets sent as a move, to prevent cheating).
 ;;
+
 ;; **************************************************
 ;; * Organization:
 ;; **************************************************
+
 ;;
 ;; A game state is defined purely by the board
 ;;
@@ -106,7 +115,9 @@ All-clojure asynchronous, internet-enabled mobile Shogi.
 ;;                basic implementation as Human players, with a single "over-ridden" function.
 ;;
 ;;
+
 ;; *****************************************************************************************
 ;; Author: Agendine (Matthew Kroen)
 ;; *****************************************************************************************
+
 Distributed under the Eclipse Public License, the same as Clojure.
