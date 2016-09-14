@@ -25,7 +25,9 @@ All-clojure asynchronous, internet-enabled mobile Shogi.
 
 ;;
 ;; **************************************************
+
 ;; The phone side of things contains:
+
 ;; **************************************************
 
 ;;      The game logic,
@@ -37,7 +39,9 @@ All-clojure asynchronous, internet-enabled mobile Shogi.
 ;;
 
 ;; **************************************************
+
 ;; The server side handles:
+
 ;; **************************************************
 
 ;;      User accounts (VERY simple.  NO PRIVATE INFORMATION IS STORED.  Just:
@@ -60,7 +64,9 @@ All-clojure asynchronous, internet-enabled mobile Shogi.
 ;;
 
 ;; **************************************************
+
 ;; * Organization:
+
 ;; **************************************************
 
 ;;
@@ -117,7 +123,9 @@ All-clojure asynchronous, internet-enabled mobile Shogi.
 ;;
 
 ;; *****************************************************************************************
+
 ;; Author: Agendine (Matthew Kroen)
+
 ;; *****************************************************************************************
 
 Distributed under the Eclipse Public License, the same as Clojure.
