@@ -57,7 +57,7 @@ The phone side of things contains:
       notifications to the other player (via Push notificaitons through Google/Apple services),      user verification (via Google/Apple account authentication, since those should be
                          available for any user)
       Game history of each running game (used to verify that no illegal
-                    JSON-tampering gets sent as a move, to prevent cheating).
+                    tampering gets sent as a move, to prevent cheating).
 
 
 **************************************************
